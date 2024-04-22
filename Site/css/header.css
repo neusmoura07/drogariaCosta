@@ -1,0 +1,124 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin-left: auto; /* Define a margem à esquerda */
+    margin-right: auto; /* Define a margem à direita */
+    max-width: 1200px; /* Define uma largura máxima para o header */
+}
+
+.logo img:hover {
+    opacity: 0.5; /* Opacidade reduzida ao passar o mouse sobre a imagem */
+}
+
+.logo img {
+    max-width: 100px; /* Ajuste conforme o tamanho da sua logo */
+    cursor: pointer; /* Altera o cursor para indicar que a imagem é clicável */
+}
+
+.search-bar {
+    position: relative;
+    display: inline-block;
+}
+
+.search-input {
+    padding: 20px 500px 20px 8px; /* Ajuste o padding conforme necessário */
+    border: 1px solid #6F6F6F;
+    border-radius: 0px;
+    width: 300px;
+    line-height: 1;
+}
+
+.search-button {
+    position: absolute;
+    right: 15px; /* Ajusta a distância da direita conforme necessário */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    background-image: url('../assets/images/lupa-pesquisa.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -0px;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites do container */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
+    border-radius: 10px; /* Adiciona arredondamento de 10 pixels nas bordas do container */
+}
+
+.cart-container::before {
+    content: "";
+    width: 20px; /* Largura da imagem */
+    height: 20px; /* Altura da imagem */
+    background-image: url('../assets/images/carrinho.png'); /* Caminho para sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+    background-position: center; /* Centraliza a imagem */
+    margin-bottom: 5px; /* Margem entre a imagem e o número de itens */
+}
+
+.item-count {
+    font-size: 20px; /* Tamanho da fonte do número de itens */
+}
+
+.cart-text {
+    font-weight: bold; /* Negrito para o texto "Meu Carrinho" */
+    align-self: baseline; /* Alinha o texto com a barra de pesquisa */
+    color:rgb(63, 63, 63)
+}
+
+.account-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites do container */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
+    border-radius: 10px; /* Adiciona arredondamento de 10 pixels nas bordas do container */
+}
+
+.account-container::before {
+    content: "";
+    width: 20px; /* Largura da imagem */
+    height: 20px; /* Altura da imagem */
+    background-image: url('../assets/images/perfil.png'); /* Caminho para sua imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir o elemento */
+    background-position: center;
+    margin-bottom: 5px;
+}
+
+.account-text {
+    font-weight: bold;
+    margin-top: 4px; /* Margem entre o texto "Minha Conta" e o link "Entrar" */
+    align-self: baseline; /* Alinha o texto com a barra de pesquisa */
+    color:rgb(63, 63, 63)
+}
+
+.login-link {
+    margin-top: 0px; /* Margem entre o texto "Minha Conta" e o link "Entrar" */
+    text-decoration: none;
+    margin-top: 2px;
+    color: #000000; /* Cor do link "Entrar" */
+    font-weight: bold;  
+}
+
+.cart-container:hover {
+    background-color: #A4A792; /* Cor de fundo quando o mouse passa sobre o container */
+    color: #000000; /* Cor do texto quando o mouse passa sobre o container */
+    transform: scale(1.1); /* Aumenta o tamanho do container em 10% quando o mouse passa sobre ele */
+}
+.account-container:hover {
+    background-color: #A4A792; /* Cor de fundo quando o mouse passa sobre o container */
+    color: #000000; /* Cor do texto quando o mouse passa sobre o container */
+    transform: scale(1.1); /* Aumenta o tamanho do container em 10% quando o mouse passa sobre ele */
+}
