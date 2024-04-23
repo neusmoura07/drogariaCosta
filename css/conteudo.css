@@ -2,7 +2,7 @@
     position: relative;
     display: inline-block;
     margin: 0 auto; /* Isso cria uma margem automática nas laterais, centralizando o conteúdo */
-    padding-top: 50px;
+    margin-top: 150px;
     max-width: 1200px; /* Define uma largura máxima */
     transition: top 0.3s ease, display 0.3s ease; /* Adiciona transição para a posição e visibilidade */
 }
@@ -39,7 +39,7 @@
 
 .menu.open {
     display: block;
-    top: 80px; /* Ajuste conforme necessário para posicionar o menu aberto */
+    top: 35px; /* Ajuste conforme necessário para posicionar o menu aberto */
     transition-delay: 0.2s; /* Adiciona um atraso à transição de abertura */
 }
 
