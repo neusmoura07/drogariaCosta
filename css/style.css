@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body, .page-container {
     margin: 0; /* Remove toda a margem da página e do container */
 }

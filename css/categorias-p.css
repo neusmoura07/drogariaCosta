@@ -1,0 +1,43 @@
+.main-categorias {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px; /* Adiciona espaço entre as categorias principais e o menu */
+}
+
+.category a {
+    display: block; /* Transforma o link em um bloco para ocupar toda a área do quadrado */
+    text-decoration: none; /* Remove o sublinhado */
+    color: inherit; /* Herda a cor do texto do elemento pai */
+}
+
+/* Estilo para quando o link estiver em foco */
+.category a:focus, .category a:hover {
+    outline: none; /* Remove a borda de foco */
+}
+
+
+.category {
+    text-align: center;
+    margin: 10px 70px; /* Adiciona espaço entre as categorias */
+}
+
+.category-icon {
+    width: 50px; /* Define a largura do ícone */
+    height: 50px; /* Define a altura do ícone */
+    background-size: 60%; /* Ajusta a imagem para cobrir o elemento */
+    background-color: rgb(255, 255, 255) ;
+    border: 2px solid #000000; /* Adiciona uma borda sólida de 2px laranja */
+    border-radius: 10px; /* Bordas curvadas */
+    margin: 0 auto 20px; /* Adiciona espaço entre o ícone e o texto */
+    background-repeat: no-repeat; /* Impede que a imagem seja repetida */
+    background-position: center; /* Centraliza a imagem dentro do quadrado */
+}
+
+.category span {
+    display: block;
+    white-space: nowrap; /* Impede a quebra de linha */
+    overflow: hidden; /* Oculta qualquer conteúdo que exceda a largura do elemento */
+    text-overflow: ellipsis; /* Adiciona reticências (...) para indicar que o texto foi cortado */
+
+}

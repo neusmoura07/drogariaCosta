@@ -44,7 +44,7 @@ header {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    background-image: url('/assets/images/lupa-pesquisa.png');
+    background-image: url('/assets/images/header/lupa-pesquisa.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -65,7 +65,7 @@ header {
     content: "";
     width: 20px; /* Largura da imagem */
     height: 20px; /* Altura da imagem */
-    background-image: url('/assets/images/carrinho.png'); /* Caminho para sua imagem */
+    background-image: url('/assets/images/header/carrinho.png'); /* Caminho para sua imagem */
     background-size: cover; /* Ajusta a imagem para cobrir o elemento */
     background-position: center; /* Centraliza a imagem */
     margin-bottom: 5px; /* Margem entre a imagem e o número de itens */
@@ -96,7 +96,7 @@ header {
     content: "";
     width: 20px; /* Largura da imagem */
     height: 20px; /* Altura da imagem */
-    background-image: url('/assets/images/perfil.png'); /* Caminho para sua imagem */
+    background-image: url('/assets/images/header/perfil.png'); /* Caminho para sua imagem */
     background-size: cover; /* Ajusta a imagem para cobrir o elemento */
     background-position: center;
     margin-bottom: 5px;

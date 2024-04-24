@@ -1,0 +1,26 @@
+{
+    "produtos": [
+      {
+        "nome": "Shampoo",
+        "descricao": "Shampoo suave para todos os tipos de cabelo",
+        "preco": 15.99,
+        "imagem": "shampoo.jpg",
+        "categoria": "Cuidados com o Cabelo"
+      },
+      {
+        "nome": "Creme Hidratante",
+        "descricao": "Creme hidratante para pele seca",
+        "preco": 24.99,
+        "imagem": "creme.jpg",
+        "categoria": "Cuidados com a Pele"
+      },
+      {
+        "nome": "Escova de Dentes",
+        "descricao": "Escova de dentes macia para uma limpeza eficaz",
+        "preco": 4.49,
+        "imagem": "escova.jpg",
+        "categoria": "Higiene Bucal"
+      }
+    ]
+  }
+  

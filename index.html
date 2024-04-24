@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="/css/conteudo.css">
+    <link rel="stylesheet" href="/css/categorias-p.css">
     <title>Drogaria Costa</title>
 </head>
 <body>
     <div class="page-container">
         <header>
             <div class="logo">
-                <img src="/assets/images/logo.png" alt="Logo">
+                <img src="/assets/images/header/logo.png" alt="Logo">
             </div>
             <div class="search-bar">
                 <input type="text" placeholder="O que deseja encontrar?" class="search-input">
@@ -48,6 +49,51 @@
                     <li>Cuidados com a Pele<span class="arrow-right"></span</li>
                     <!-- Adicione mais categorias conforme necessário -->
                 </ul>
+            </div>
+
+            <div class="container-categories">
+                <div class="categorias-p" id="categorias-p">
+                    <div class="main-categorias">
+                        <div class="category">
+                            <a href="teste.html">
+                            <div class="category-icon" style="background-image: url('/assets/images/categorias/perfume.png');"></div>
+                            <span>Perfume</span>
+                        </a>
+                        </div>
+                        <div class="category">
+                            <a href="teste.html">
+                            <div class="category-icon" style="background-image: url('/assets/images/categorias/cuidados-com-a-pele.png');"></div>
+                            <span>Cuidados Com a Pele</span>
+                            </a>
+                        </div>
+                        <div class="category">
+                            <a href="teste.html">
+                            <div class="category-icon" style="background-image: url('/assets/images/categorias/higiene-bucal.png');"></div>
+                            <span>Higiene Bucal</span>
+                        </a>
+                        </div>
+                        <div class="category">
+                            <a href="teste.html">
+                            <div class="category-icon" style="background-image: url('/assets/images/categorias/amamentacao.png');"></div>
+                            <span>Amamentação</span>
+                        </a>
+                        </div>
+                        <div class="category">
+                            <a href="teste.html">
+                            <div class="category-icon" style="background-image: url('/assets/images/categorias/cuidados-com-a-pele.png');"></div>
+                            <span>Sáude Sexual</span>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-mais-vendidos">
+                <div class="carousel">
+                    <!-- Itens do carrossel serão inseridos aqui dinamicamente pelo JavaScript -->
+                </div>
+                <button class="prev-btn">Anterior</button>
+                <button class="next-btn">Próximo</button>
             </div>
         </div>
         <script src="./js/script.js"></script>
