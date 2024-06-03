@@ -2,7 +2,7 @@
     position: relative;
     display: inline-block;
     margin: 0 auto; /* Isso cria uma margem automática nas laterais, centralizando o conteúdo */
-    margin-top: 150px;
+    padding-top: 50px;
     max-width: 1200px; /* Define uma largura máxima */
     transition: top 0.3s ease, display 0.3s ease; /* Adiciona transição para a posição e visibilidade */
 }
@@ -39,7 +39,8 @@
 
 .menu.open {
     display: block;
-    top: 35px; /* Ajuste conforme necessário para posicionar o menu aberto */
+    top: 80px; /* Ajuste conforme necessário para posicionar o menu aberto */
+    left: 0; /* Define a posição à esquerda */
     transition-delay: 0.2s; /* Adiciona um atraso à transição de abertura */
 }
 
@@ -50,7 +51,7 @@
 }
 
 .menu ul li {
-    padding: 10px 5px;
+    padding: 10px 1px;
     cursor: pointer;
     border-bottom: 1px solid #ccc; /* Adiciona uma linha separadora */
     color: #013E22; /* Cor do texto */

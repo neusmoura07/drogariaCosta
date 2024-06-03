@@ -14,3 +14,4 @@ document.getElementById('menuToggle').addEventListener('click', function() {
         menuContainer.classList.add('open');
     }
 }); /* FORÇA O MENU ABRIR */
+

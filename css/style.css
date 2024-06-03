@@ -1,8 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 body, .page-container {
     margin: 0; /* Remove toda a margem da página e do container */
 }
@@ -11,8 +6,11 @@ body, .page-container {
     width: 100%;
     height: 100vh;
     max-width: 1200px;
+    padding: 20px;
     box-sizing: border-box;
     margin: 0 auto; /* Centraliza o container horizontalmente */
     background-color: rgb(255, 255, 255);
 }
+
+
 

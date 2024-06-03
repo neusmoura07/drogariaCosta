@@ -2,14 +2,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0px;
+    padding: 10px 20px;
     background-color: #ffffff;
     box-sizing: border-box;
     margin-left: auto; /* Define a margem à esquerda */
     margin-right: auto; /* Define a margem à direita */
-    width: 65%; /* Define uma largura máxima para o header */
-    z-index: 1000;
-    position: fixed;
+    max-width: 1200px; /* Define uma largura máxima para o header */
 }
 
 .logo img:hover {
@@ -27,7 +25,7 @@ header {
 }
 
 .search-input {
-    padding: 20px 450px 20px 8px; /* Ajuste o padding conforme necessário */
+    padding: 20px 500px 20px 8px; /* Ajuste o padding conforme necessário */
     border: 1px solid #6F6F6F;
     border-radius: 0px;
     width: 300px;
@@ -44,7 +42,7 @@ header {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    background-image: url('/assets/images/header/lupa-pesquisa.png');
+    background-image: url('../assets/images/lupa-pesquisa.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -57,15 +55,14 @@ header {
     margin-top: -0px;
     overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites do container */
     transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
-    border-radius: 5px; /* Adiciona arredondamento de 10 pixels nas bordas do container */
-    padding: 10px;
+    border-radius: 10px; /* Adiciona arredondamento de 10 pixels nas bordas do container */
 }
 
 .cart-container::before {
     content: "";
     width: 20px; /* Largura da imagem */
     height: 20px; /* Altura da imagem */
-    background-image: url('/assets/images/header/carrinho.png'); /* Caminho para sua imagem */
+    background-image: url('../assets/images/carrinho.png'); /* Caminho para sua imagem */
     background-size: cover; /* Ajusta a imagem para cobrir o elemento */
     background-position: center; /* Centraliza a imagem */
     margin-bottom: 5px; /* Margem entre a imagem e o número de itens */
@@ -87,16 +84,14 @@ header {
     align-items: center;
     overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites do container */
     transition: transform 0.3s ease; /* Adiciona uma transição suave para a transformação */
-    border-radius: 5px; /* Adiciona arredondamento de 10 pixels nas bordas do container */
-    padding: 10px;
-    margin-right: 10px;
+    border-radius: 10px; /* Adiciona arredondamento de 10 pixels nas bordas do container */
 }
 
 .account-container::before {
     content: "";
     width: 20px; /* Largura da imagem */
     height: 20px; /* Altura da imagem */
-    background-image: url('/assets/images/header/perfil.png'); /* Caminho para sua imagem */
+    background-image: url('../assets/images/perfil.png'); /* Caminho para sua imagem */
     background-size: cover; /* Ajusta a imagem para cobrir o elemento */
     background-position: center;
     margin-bottom: 5px;
