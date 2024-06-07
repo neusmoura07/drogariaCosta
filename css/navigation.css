@@ -2,6 +2,7 @@
     padding: 50px 0; /* Espaçamento interno */
     background-color: #f8f9fa; /* Cor de fundo */
 }
+
 .product-container {
     display: flex;
     overflow-x: auto; /* Adiciona uma barra de rolagem horizontal */
@@ -9,6 +10,7 @@
     -webkit-overflow-scrolling: touch; /* Adiciona rolagem suave em dispositivos iOS */
     padding: 20px 0;
 }
+
 .product-item {
     flex: 0 0 calc(25% - 20px); /* Define a largura dos itens */
     background-color: #fff; /* Cor de fundo do item */
@@ -19,16 +21,20 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
     scroll-snap-align: start; /* Alinha cada item à borda inicial do contêiner */
 }
+
 .product-item img {
     max-width: 100%; /* Imagem responsiva */
     margin-bottom: 15px; /* Espaçamento abaixo */
 }
+
 .product-item h4 {
     margin-bottom: 10px; /* Espaçamento abaixo */
 }
+
 .product-item p {
     margin-bottom: 15px; /* Espaçamento abaixo */
 }
+
 .product-item button {
     background-color: #007bff; /* Cor de fundo do botão */
     color: #fff; /* Cor do texto */
@@ -37,9 +43,11 @@
     border-radius: 5px; /* Borda arredondada */
     cursor: pointer; /* Altera o cursor ao passar por cima */
 }
+
 .product-item button:hover {
     background-color: #0056b3; /* Cor de fundo do botão ao passar por cima */
 }
+
 .carousel-control-prev, .carousel-control-next {
     width: auto; /* Ajusta a largura das setas conforme o tamanho do conteúdo */
     background-color: transparent; /* Remove o fundo das setas */
@@ -47,9 +55,11 @@
     font-size: 1.5rem; /* Tamanho do ícone */
     color: #000; /* Cor do ícone */
 }
+
 .carousel-control-prev:focus, .carousel-control-next:focus {
     outline: none; /* Remove o contorno ao focar */
 }
+
 .product-details {
     overflow: hidden; /* Para conter elementos flutuantes */
 }
@@ -65,4 +75,12 @@
 .product-description {
     font-size: 14px; /* Define o tamanho da fonte */
     text-align: center; /* Centraliza o texto */
+}
+
+/* Media Query para dispositivos com largura máxima de 768px (tablets e smartphones) */
+@media (max-width: 768px) {
+    .product-item {
+        flex: 0 0 calc(50% - 20px); /* Altera a largura dos itens para 50% */
+        margin-right: 10px; /* Altera o espaçamento à direita */
+    }
 }
