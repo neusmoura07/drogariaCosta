@@ -1,0 +1,76 @@
+.footer {
+    background-color: #013E22;
+    color: #BCBCBC;
+    text-align: center;
+    margin-top: 100px;
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-info {
+    font-size: 14px;
+    margin-bottom: 50px;
+}
+
+.footer-contact {
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.footer-social {
+    margin-bottom: 30px;
+}
+
+.footer-social .footer-btn {
+    margin: 0 5px;
+}
+
+.footer-social .footer-btn img {
+    width: 24px; /* Defina o tamanho desejado */
+    height: 24px; /* Defina o tamanho desejado */
+}
+.footer-disclaimer {
+    font-size: 10px;
+    margin-bottom: -15px;
+}
+
+.footer-container {
+    padding: 20px;
+    box-sizing: border-box; /* Garante que o padding não incremente a largura total */
+    width: 100%; /* Ocupa a largura total da tela */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-info,
+.footer-contact,
+.footer-social,
+.footer-disclaimer {
+    margin-bottom: 20px;
+}
+
+.footer-btn {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Estilos para ícones */
+.whatsapp img,
+.instagram img {
+    width: 30px;
+    height: 30px;
+}
+
+/* CSS adicional para ajustar o layout */
+@media (max-width: 576px) {
+    .footer {
+        position: relative;
+        margin-top: 20px; /* Espaço entre o conteúdo e o footer no celular */
+        width: 100%;
+    }
+}

@@ -1,6 +1,5 @@
 .container {
     position: relative;
-    display: inline-block;
     margin: 0 auto; /* Isso cria uma margem automática nas laterais, centralizando o conteúdo */
     padding-top: 50px;
     max-width: 1200px; /* Define uma largura máxima */

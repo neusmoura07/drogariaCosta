@@ -3,8 +3,11 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
-body, .page-container {
-    margin: 0; /* Remove toda a margem da página e do container */
+
+body,
+.page-container {
+    margin: 0;
+    /* Remove toda a margem da página e do container */
 }
 
 .page-container {
@@ -13,18 +16,24 @@ body, .page-container {
     max-width: 1200px;
     padding: 20px;
     box-sizing: border-box;
-    margin: 0 auto; /* Centraliza o container horizontalmente */
+    margin: 0 auto;
+    /* Centraliza o container horizontalmente */
     background-color: rgb(255, 255, 255);
 }
 
 /* Estilos para o menu de categorias */
 .menu {
-    position: absolute; /* Define a posição absoluta */
-    top: 0; /* Posiciona o menu no topo */
-    left: 0; /* Posiciona o menu no lado esquerdo */
-    z-index: 1000; /* Define um z-index alto para garantir que o menu fique acima de outros elementos */
+    position: absolute;
+    /* Define a posição absoluta */
+    top: 0;
+    /* Posiciona o menu no topo */
+    left: 0;
+    /* Posiciona o menu no lado esquerdo */
+    z-index: 1000;
+    /* Define um z-index alto para garantir que o menu fique acima de outros elementos */
     /* Outros estilos do menu */
 }
+
 .my-5 {
     margin-top: 1rem !important;
     margin-bottom: 1rem !important;
@@ -37,74 +46,125 @@ card-img-top img-fluid {
 body {
     background: hsl(0, 0, 94%);
 }
-    
+
 
 /* Diminuindo o título e alinhando à esquerda */
 h1 {
-    text-align: left; /* Alinha o texto à esquerda */
+    text-align: left;
+    /* Alinha o texto à esquerda */
 }
+
+.categoria-container h1 {
+    font-size: 2.5rem;
+    /* Defina o tamanho da fonte desejado */
+    color: #013E22;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 
 /* Estilizando o card title e card text */
 .card-title {
-    color: #6c757d; /* Cinza */
-    font-size: 0.75rem; /* Tamanho da fonte menor */
-    margin-bottom: 0.5rem; /* Reduz o espaço abaixo do título */
+    color: #6c757d;
+    /* Cinza */
+    font-size: 0.75rem;
+    /* Tamanho da fonte menor */
+    margin-bottom: 0.5rem;
+    /* Reduz o espaço abaixo do título */
 }
 
 .card-text {
-    font-weight: bold; /* Texto da marca do produto em negrito */
+    font-weight: bold;
+    /* Texto da marca do produto em negrito */
 }
 
 /* Linha horizontal preta */
 .hr-black {
-    height: 1px; /* Altura da linha */
-    background-color: black; /* Cor da linha */
-    margin-top: 10px; /* Margem superior */
-    margin-bottom: 10px; /* Margem inferior */
-    width: calc(100% + 35px); /* Largura total mais a margem para cobrir toda a largura do card */
+    height: 1px;
+    /* Altura da linha */
+    background-color: black;
+    /* Cor da linha */
+    margin-top: 10px;
+    /* Margem superior */
+    margin-bottom: 10px;
+    /* Margem inferior */
+    width: calc(100% + 35px);
+    /* Largura total mais a margem para cobrir toda a largura do card */
     position: relative;
-    left: -18px; /* Move a linha para a esquerda para cobrir a margem */
+    left: -18px;
+    /* Move a linha para a esquerda para cobrir a margem */
 }
 
 /* Estilizando o botão */
-.btn-primary {
-    background-color: #013E22; /* Cor de fundo personalizada */
-    border: none; /* Remove a borda */
-    border-radius: 10px; /* Deixa o botão mais arredondado */
-    padding: 7px 12px; /* Ajusta o padding para diminuir o tamanho */
-    font-size: 0.875rem; /* Tamanho da fonte menor */
+button.btn.btn-primary {
+    background-color: #013E22 !important;
+    /* Cor de fundo personalizada */
+    border: none !important;
+    /* Remove a borda */
+    border-radius: 10px !important;
+    /* Deixa o botão mais arredondado */
+    padding: 7px 12px !important;
+    /* Ajusta o padding para diminuir o tamanho */
+    font-size: 0.875rem !important;
+    /* Tamanho da fonte menor */
 }
 
-/* Ajustando a posição do preço e botão */
-.card-footer {
-    display: flex; /* Flex container */
-    justify-content: space-between; /* Alinha os itens nas extremidades */
-    align-items: center; /* Alinha os itens verticalmente ao centro */
-    margin-top: auto; /* Empurra para o fim da div */
-    background-color: transparent; /* Fundo transparente */
-    border: none; /* Sem bordas */
-    padding: 0; /* Remove padding */
+div.card-footer {
+    display: flex !important;
+    /* Flex container */
+    justify-content: space-between !important;
+    /* Alinha os itens nas extremidades */
+    align-items: center !important;
+    /* Alinha os itens verticalmente ao centro */
+    margin-top: auto !important;
+    /* Empurra para o fim da div */
+    background-color: transparent !important;
+    /* Fundo transparente */
+    border: none !important;
+    /* Sem bordas */
+    padding: 0 !important;
+    /* Remove padding */
 }
 
-/* Centralizando o preço horizontalmente */
 .card-footer .fw-bold {
-    margin-right: auto; /* Adiciona margem automática à direita */
-    margin-left: auto; /* Adiciona margem automática à esquerda */
-    color: #013E22;
-    font-weight: bold; 
-    font-size: 10px;
+    margin-right: auto !important;
+    /* Adiciona margem automática à direita */
+    margin-left: auto !important;
+    /* Adiciona margem automática à esquerda */
+    color: #013E22 !important;
+    font-weight: bold !important;
+    font-size: 13px !important;
+    
 }
 
 /* Tamanho responsivo para o preço */
 @media (max-width: 768px) {
     .card-body .fw-bold {
-        font-size: 0.875rem; /* Tamanho da fonte para dispositivos menores */
+        font-size: 0.875rem;
+        /* Tamanho da fonte para dispositivos menores */
     }
 }
 
 @media (min-width: 769px) {
     .card-body .fw-bold {
-        font-size: 1rem; /* Tamanho da fonte para dispositivos maiores */
+        font-size: 1rem;
+        /* Tamanho da fonte para dispositivos maiores */
     }
 }
 
+/* Ajustando a margem entre os itens do carrossel */
+.owl-carousel .carousel-item {
+    margin: 15px;
+    /* Ajuste este valor conforme necessário */
+}
+
+/* Certifique-se de que o container do carrossel tem largura total */
+.owl-carousel {
+    width: 100%;
+}
+
+/* Mantendo a largura fixa dos cards */
+.card {
+    width: 14rem;
+}

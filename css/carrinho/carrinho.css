@@ -1,0 +1,200 @@
+/* Estilos personalizados */
+.produto-container {
+    border: 1px solid #EFEFEF;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    height: 100px; /* Tamanho fixo do container */
+    display: flex;
+    align-items: center;
+}
+
+.produto-container img {
+    max-height: 80px; /* Ajusta a imagem ao container */
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.lixeira-icon {
+    width: 20px;
+    cursor: pointer;
+}
+.produto-info {
+    margin-top: 10px;
+}
+.btn-remover {
+    margin-top: 10px;
+}
+
+/* Estilização para as caixas de seleção */
+.radio-custom .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.radio-custom .form-check-input {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.1rem;
+    border: 1px solid #ced4da;
+    border-radius: 30%; /* Muda para um círculo */
+    appearance: none; /* Remove o estilo padrão */
+    background-color: transparent; /* Remove o fundo padrão */
+}
+
+/* Estilo para o ponto verde */
+.radio-custom .form-check-input:checked::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.9rem;
+    height: 1rem;
+    background-color: #013E22; /* Cor do ponto verde */
+    border-radius: 30%;
+}
+
+/* Adicionando espaçamento entre o radio e o texto */
+.radio-custom .form-check-label {
+    margin-left: 10px; /* Ajuste conforme necessário */
+}
+/* Estilização para a seção de pagamento e endereço */
+.payment-address-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-radius: 5px; /* Arredondamento dos cantos */
+    padding: 20px; /* Espaçamento interno */
+    max-width: 1200px; /* Largura máxima */
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.payment-section,
+.address-section {
+    flex: 1; /* Faz com que as seções ocupem o espaço disponível */
+    margin-right: 20px; /* Espaçamento entre as seções */
+}
+
+.total-section {
+    flex-basis: 100%; /* Ocupa 100% da largura disponível */
+}
+
+/* Estilizando os títulos */
+.payment-section h4,
+.address-section h4,
+.total-section h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Estilizando os botões e textos */
+.btn-finalizar {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.info-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilizando os inputs e labels */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    height: 38px;
+    font-size: 1rem;
+}
+
+/* Estilizando os radios e checkboxes */
+.radio-custom .form-check {
+    margin-bottom: 0.5rem;
+}
+
+.address-form .form-group {
+    margin-bottom: 10px; /* Reduzido o espaçamento entre os grupos de campos */
+}
+
+.address-form .form-row {
+    margin-bottom: 15px; /* Reduzido o espaçamento entre as linhas */
+}
+
+.address-form .form-control {
+    height: calc(1.5em + 0.75rem + 2px); /* Ajusta a altura dos inputs */
+}
+
+/* Estilização para os inputs da primeira linha */
+.row-outro .form-control {
+    height: 60px; /* Altura aumentada verticalmente */
+    padding: 0.5rem 1rem; /* Padding ajustado */
+    border: 1px solid #6F6F6F; /* Borda preta sólida */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+/* Estilização para os labels da primeira linha */
+.row-outro .form-label {
+    color: #a09f9f; /* Cor do texto do label mais clara */
+    font-weight: bold; /* Negrito no texto do label */
+}
+
+/* Estilos opcionais para ajustar o layout */
+.total-section {
+    text-align: center; /* Centraliza o conteúdo */
+}
+
+.total-section h5 {
+    font-size: 12px; /* Tamanho menor para o texto "Total" */
+    margin-bottom: 5px; /* Espaçamento abaixo do texto "Total" */
+}
+
+.total-section h4 {
+    font-size: 34px; /* Tamanho maior para o valor total */
+    margin-top: 5px; /* Espaçamento acima do valor total */
+    color: #013E22;
+}
+
+.btn-finalizar {
+    border-radius: 15px; /* Borda mais arredondada */
+    background-color: #013E22; /* Cor de fundo personalizada */
+    color: #ffffff; /* Cor do texto */
+    padding: 10px 30px; /* Espaçamento interno */
+    font-size: 18px; /* Tamanho da fonte */
+    border: none; /* Remove a borda */
+    transition: background-color 0.3s ease; /* Transição suave de cor de fundo */
+}
+
+.btn-finalizar:hover {
+    background-color: black; /* Cor de fundo ao passar o mouse */
+}
+
+.btn-finalizar .icon-whatsapp {
+    margin-right: 10px; /* Espaçamento à direita do ícone */
+}
+
+.info-text {
+    margin-top: 10px; /* Margem superior para afastar do botão */
+    color: #ff3d2f; /* Cor vermelha para "Não Esqueça" */
+}
+
+.produto-img {
+    max-width: 100%; /* Garante que a imagem seja responsiva */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+    .ocultar-celular {
+        display: none !important; 
+    }
+}

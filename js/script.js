@@ -35,23 +35,23 @@ $(document).ready(function () {
         responsive: {
             0: {
                 items: 1,
-                margin: -60, // Margem zero para dispositivos com menos de 576 pixels de largura
+                margin: -20, // Margem zero para dispositivos com menos de 576 pixels de largura
             },
             576: {
                 items: 2,
-                margin: 10, // Margem de 10 pixels para dispositivos com largura entre 576px e 767px
+                margin: 20, // Margem de 10 pixels para dispositivos com largura entre 576px e 767px
             },
             768: {
                 items: 3,
-                margin: 20, // Margem de 20 pixels para dispositivos com largura entre 768px e 991px
+                margin: 40, // Margem de 20 pixels para dispositivos com largura entre 768px e 991px
             },
             992: {
                 items: 4,
-                margin: 30, // Margem de 30 pixels para dispositivos com largura entre 992px e 1199px
+                margin: 60, // Margem de 30 pixels para dispositivos com largura entre 992px e 1199px
             },
             1200: {
                 items: 5,
-                margin: 40, // Margem de 40 pixels para dispositivos com largura maior ou igual a 1200px
+                margin: 100, // Margem de 40 pixels para dispositivos com largura maior ou igual a 1200px
             }
         }
     });

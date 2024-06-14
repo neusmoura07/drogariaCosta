@@ -1,151 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/conteudo.css">
     <link rel="stylesheet" href="../css/navigation.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="../css/categorias-p.css">
+    <link rel="stylesheet" href="../css/rodape.css">
 </head>
-<body>
-    <div class="page-container">
-        <header>
-            <div class="logo">
-                <img src="../assets/images/logo.png" alt="Logo">
-            </div>
-            <div class="search-bar">
-                <input type="text" placeholder="O que deseja encontrar?" class="search-input">
-                <button type="submit" class="search-button"></button>
-            </div>
-            <div class="cart-container">
-                <span class="item-count">0</span>
-                <span class="cart-text">Meu Carrinho</span>
-            </div>
-            <div class="account-container">
-                <span class="account-text">Minha Conta</span>
-                <a href="caminho_para_pagina_de_login.html" class="login-link">Entrar</a>
-            </div>
-        </header>
-    
-        <div class="container">
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class = "outras-categorias"><span>Outras Categorias</span></div>
-            <div class="menu" id="menu">
-                <ul>
-                    <li>Medicamentos<span class="arrow-right"></span</li>
-                    <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                    <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                    <li>Medicamentos<span class="arrow-right"></span</li>
-                    <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                    <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                    <li>Medicamentos<span class="arrow-right"></span</li>
-                    <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                    <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                    <!-- Adicione mais categorias conforme necessário -->
-                </ul>
-            </div>
-        </div>
-        
-        <div class="container my-5 p-3 categoria-container">
-            <h1 class="fw-bold display-4 mb-5">Fraldas</h1>
-            <div class="row">
-                <div class="col-12 m-auto">
-                    <div class="owl-carousel owl-theme" id="owl-demo">
-                        <div class="item">
-                            <div class="card border-0 shadow mx-2" style="width: 14rem; margin: 10px;">
-                                <img src="/assets/images/dorflex.jpg" alt="" class="card-img-top img-fluid" style="padding: 30px;">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-center">Descrição do Produto 1</h5>
-                                    <p class="card-text text-center">DorFlex</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <input type="number" class="form-control form-control-sm text-center" style="width: 50px;" value="1">
-                                    </div>
-                                    <div class="hr-black"></div>
-                                    <div class="card-footer d-flex justify-content-between align-items-center" style="margin-top: 10px;">
-                                        <p class="fw-bold mb-0">R$ 19,99</p>
-                                        <button class="btn btn-primary">Comprar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Adicione mais cards com informações específicas conforme necessário -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="container my-5 p-3 categoria-container">
-            <h1 class="fw-bold display-4 mb-5">Remedio</h1>
-            <div class="row">
-                <div class="col-12 m-auto">
-                    <div class="owl-carousel owl-theme" id="owl-demo">
-                        <div class="item">
-                            <div class="card border-0 shadow mx-2" style="width: 14rem; margin: 10px;">
-                                <img src="/assets/images/dorflex.jpg" alt="" class="card-img-top img-fluid" style="padding: 30px;">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-center">Descrição do Produto 1</h5>
-                                    <p class="card-text text-center">DorFlex</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <input type="number" class="form-control form-control-sm text-center" style="width: 50px;" value="1">
-                                    </div>
-                                    <div class="hr-black"></div>
-                                    <div class="card-footer d-flex justify-content-between align-items-center" style="margin-top: 10px;">
-                                        <p class="fw-bold mb-0">R$ 19,99</p>
-                                        <button class="btn btn-primary">Comprar</button>
-                                    </div>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Logo">
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="O que deseja encontrar?" class="search-input">
+            <button type="submit" class="search-button"></button>
+        </div>
+        <div class="cart-container">
+            <span class="item-count">0</span>
+            <span class="cart-text">Meu Carrinho</span>
+        </div>
+        <div class="account-container">
+            <span class="account-text">Minha Conta</span>
+            <a href="caminho_para_pagina_de_login.html" class="login-link">Entrar</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="outras-categorias"><span>Outras Categorias</span></div>
+        <div class="menu" id="menu">
+            <ul>
+                <li>Medicamentos<span class="arrow-right"></span</li>
+                <li>Produtos de Higiene<span class="arrow-right"></span</li>
+                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
+                <li>Medicamentos<span class="arrow-right"></span</li>
+                <li>Produtos de Higiene<span class="arrow-right"></span</li>
+                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
+                <li>Medicamentos<span class="arrow-right"></span</li>
+                <li>Produtos de Higiene<span class="arrow-right"></span</li>
+                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container my-5 p-3 categoria-container">
+        <h1 class="fw-bold display-4 mb-5">Mais Vendidos</h1>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme" id="owl-demo">
+                    <div class="item">
+                        <div class="card border-0 shadow mx-2" style="width: 14rem; margin: 10px;">
+                            <img src="/assets/images/dorflex.jpg" alt="" class="card-img-top img-fluid"
+                                style="padding: 30px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-center">Descrição do Produto 1</h5>
+                                <p class="card-text text-center">DorFlex</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        style="width: 50px;" value="1">
+                                </div>
+                                <div class="hr-black"></div>
+                                <div class="card-footer d-flex justify-content-between align-items-center"
+                                    style="margin-top: 10px;">
+                                    <p class="fw-bold mb-0">R$ 19,99</p>
+                                    <button class="btn btn-primary">Comprar</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Adicione mais cards com informações específicas conforme necessário -->
                     </div>
+
                 </div>
             </div>
-            
         </div>
-        <div class="container my-5 p-3 categoria-container">
-            <h1 class="fw-bold display-4 mb-5">Outra Coisa</h1>
-            <div class="row">
-                <div class="col-12 m-auto">
-                    <div class="owl-carousel owl-theme" id="owl-demo">
-                        <div class="item">
-                            <div class="card border-0 shadow mx-2" style="width: 14rem; margin: 10px;">
-                                <img src="/assets/images/dorflex.jpg" alt="" class="card-img-top img-fluid" style="padding: 30px;">
-                                <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title text-center">Descrição do Produto 1</h5>
-                                    <p class="card-text text-center">DorFlex</p>
-                                    <div class="d-flex justify-content-center align-items-center">
-                                        <input type="number" class="form-control form-control-sm text-center" style="width: 50px;" value="1">
-                                    </div>
-                                    <div class="hr-black"></div>
-                                    <div class="card-footer d-flex justify-content-between align-items-center" style="margin-top: 10px;">
-                                        <p class="fw-bold mb-0">R$ 19,99</p>
-                                        <button class="btn btn-primary">Comprar</button>
-                                    </div>
+        <h1 class="fw-bold display-4 mb-5">Mais Vendidos</h1>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme" id="owl-demo">
+                    <div class="item">
+                        <div class="card border-0 shadow mx-2" style="width: 14rem; margin: 10px;">
+                            <img src="/assets/images/dorflex.jpg" alt="" class="card-img-top img-fluid"
+                                style="padding: 30px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-center">Descrição do Produto 1</h5>
+                                <p class="card-text text-center">DorFlex</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        style="width: 50px;" value="1">
+                                </div>
+                                <div class="hr-black"></div>
+                                <div class="card-footer d-flex justify-content-between align-items-center"
+                                    style="margin-top: 10px;">
+                                    <p class="fw-bold mb-0">R$ 19,99</p>
+                                    <button class="btn btn-primary">Comprar</button>
                                 </div>
                             </div>
                         </div>
-                        <!-- Adicione mais cards com informações específicas conforme necessário -->
                     </div>
+
                 </div>
             </div>
-            
         </div>
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"></script>
-        <script src="js/script.js"></script>
-    
-<!-- Inclua o link para o seu arquivo JavaScript -->
+        <h1 class="fw-bold display-4 mb-5">Mais Vendidos</h1>
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme" id="owl-demo">
+                    <div class="item">
+                        <div class="card border-0 shadow mx-2" style="width: 14rem; margin: 10px;">
+                            <img src="/assets/images/dorflex.jpg" alt="" class="card-img-top img-fluid"
+                                style="padding: 30px;">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-center">Descrição do Produto 1</h5>
+                                <p class="card-text text-center">DorFlex</p>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <input type="number" class="form-control form-control-sm text-center"
+                                        style="width: 50px;" value="1">
+                                </div>
+                                <div class="hr-black"></div>
+                                <div class="card-footer d-flex justify-content-between align-items-center"
+                                    style="margin-top: 10px;">
+                                    <p class="fw-bold mb-0">R$ 19,99</p>
+                                    <button class="btn btn-primary">Comprar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    CALHEIROS FARMA LTDA | 44170902000141
+                </div>
+                <div class="footer-contact">
+                    Av. de Contôrno, 11 - Benedito Bentes - Maceió CEP: 57084646 | Fale conosco:
+                </div>
+                <div class="footer-social">
+                    <a href="https://wa.me/seunumero" target="_blank" class="footer-btn whatsapp">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/seuusuario" target="_blank" class="footer-btn instagram">
+                        <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
+                    </a>
+                </div>
+                <div class="footer-disclaimer">
+                    As informações contidas neste site não devem ser usadas para automedicação e não substituem, em
+                    hipótese alguma, as orientações dadas pelo profissional da área médica. Somente o médico está
+                    apto a diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. Ao
+                    persistirem os sintomas, um médico deverá ser consultado. Os preços e promoções divulgados no
+                    site são válidos apenas para compras feitas pela internet. Maiores esclarecimentos, consultar o
+                    site: www.anvisa.gov.br. Todos os pedidos efetuados estão sujeitos à confirmação da
+                    disponibilidade de produto em nosso estoque.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

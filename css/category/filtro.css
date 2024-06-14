@@ -1,0 +1,177 @@
+/* Reset de estilos para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza o container horizontalmente */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex; /* Usa flexbox para organizar os elementos */
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha em telas menores */
+}
+
+/* Estilos para o filtro à esquerda */
+.filtro {
+    width: 100%; /* Largura total em telas pequenas */
+    max-width: 200px; /* Largura máxima em telas maiores */
+    padding: 15px;
+    margin-bottom: 20px; /* Espaço entre o filtro e os produtos */
+    margin-top: 40px; /* Espaçamento entre o filtro e o conteúdo */
+    margin-right: 30px;
+    border: none; /* Remove a borda da div */
+}
+
+.filtro h2 {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.filtro-item {
+    margin-bottom: 10px;
+}
+
+/* Estilização para as caixas de seleção */
+.subcategorias .form-check {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.subcategorias .form-check-input {
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 0.1rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    appearance: none; /* Remove o estilo padrão */
+    background-color: transparent; /* Remove o fundo padrão */
+}
+
+.subcategorias .form-check-input:checked::before {
+    content: '';
+    display: block;
+    width: 0.9rem;
+    height: 1rem;
+    background-color: #013E22; /* Cor do ponto */
+    border-radius: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Remover o fundo azul padrão */
+.subcategorias .form-check-input:checked {
+    background-color: transparent; /* Garante que o fundo permaneça transparente */
+    border-color: #013E22; /* Cor da borda ao ser marcado */
+}
+
+.subcategorias .form-check-label {
+    margin-left: 10px; /* Afastar o texto do botão de seleção */
+}
+
+/* Adicionando linha preta no final das subcategorias */
+.subcategorias::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #ADADAD;
+    margin-top: 10px;
+}
+
+/* Estilos para os produtos à direita */
+.produtos {
+    flex: 1; /* Ocupa todo o espaço restante */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 40px; /* Espaçamento entre os produtos e o conteúdo */
+}
+
+.produto {
+    width: calc(25% - 20px); /* 4 produtos por linha */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px; /* Espaço entre os produtos */
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.produto h3 {
+    margin-top: 10px;
+    font-size: 1rem;
+}
+
+.produto p {
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+.produto button {
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.produto button:hover {
+    background-color: #218838;
+}
+
+/* Consulta de mídia para telas menores que 768px (tablet) */
+@media (max-width: 768px) {
+    .filtro {
+        max-width: none; /* Remove a largura máxima */
+        margin-bottom: 0px; /* Espaço entre o filtro e os produtos */
+    }
+
+    .produto {
+        width: calc(50% - 20px); /* 2 produtos por linha */
+    }
+}
+
+/* Consulta de mídia para telas menores que 576px (celular) */
+@media (max-width: 576px) {
+    .produto {
+        width: 100%; /* 1 produto por linha */
+    }
+    .produtos {
+        justify-content: center; /* Centraliza os produtos */
+    }
+}
+
+/* Estilo para o título da categoria */
+.categoria-title {
+    margin-top: 20px; /* Espaçamento entre o título e o conteúdo */
+    font-size: 1.5rem; /* Tamanho do texto */
+    font-weight: bold; /* Negrito */
+}
+
+/* Estilo para o paginador */
+.paginador {
+    margin-top: 20px; /* Espaçamento entre o paginador e o conteúdo */
+    text-align: right; /* Alinhamento do texto à direita */
+}
+
+/* Estilo para os ícones do paginador */
+.paginador i {
+    cursor: pointer; /* Cursor do mouse como ponteiro */
+    margin: 0 5px; /* Margem entre os ícones */
+    font-size: 1.5rem; /* Tamanho do ícone */
+}
