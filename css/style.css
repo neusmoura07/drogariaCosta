@@ -18,7 +18,7 @@ body,
     box-sizing: border-box;
     margin: 0 auto;
     /* Centraliza o container horizontalmente */
-    background-color: rgb(255, 255, 255);
+    background-color: #FFFFFF;
 }
 
 /* Estilos para o menu de categorias */
@@ -44,7 +44,7 @@ card-img-top img-fluid {
 }
 
 body {
-    background: hsl(0, 0, 94%);
+    background-color: #f8f9fa;
 }
 
 

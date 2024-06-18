@@ -1,3 +1,6 @@
+body{
+    background-color: #ffffff;
+}
 /* Estilos personalizados */
 .produto-container {
     border: 1px solid #EFEFEF;
