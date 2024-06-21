@@ -1,0 +1,91 @@
+.container {
+    position: relative;
+    margin: 0 auto; /* Isso cria uma margem automática nas laterais, centralizando o conteúdo */
+    padding-top: 50px;
+    max-width: 1200px; /* Define uma largura máxima */
+    transition: top 0.3s ease, display 0.3s ease; /* Adiciona transição para a posição e visibilidade */
+}
+
+.menu-toggle {
+    cursor: pointer;
+    position: absolute;
+    width: 30px; /* Defina a largura do botão de alternância */ /*PODENDO TIRAR */
+    height: 30px; /* Defina a altura do botão de alternância */ /*PODENDO TIRAR */
+
+}
+
+.menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #013E22;
+    margin-bottom: 5px;
+    transition: transform 0.3s ease;
+}
+
+.menu {
+    display: none;
+    position: absolute;
+    top: 75px; /* Ajuste conforme necessário para alinhar verticalmente */
+    right: -55px; /* Ajuste conforme necessário para alinhar horizontalmente */
+    width: 200px;
+    background-color: #fff;
+    border: 1px solid #000; /* Borda preta */
+    z-index: 99;
+    padding: 10px;
+    transition: top 0.3s ease, display 0.3s ease; /* Adiciona transição para a posição e visibilidade */
+}
+
+.menu.open {
+    display: block;
+    top: 80px; /* Ajuste conforme necessário para posicionar o menu aberto */
+    left: 0; /* Define a posição à esquerda */
+    transition-delay: 0.2s; /* Adiciona um atraso à transição de abertura */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Remova a margem padrão */
+}
+
+.menu ul li {
+    padding: 10px 1px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc; /* Adiciona uma linha separadora */
+    color: #013E22; /* Cor do texto */
+    font-weight: bold;
+}
+
+.menu ul li:last-child {
+    border-bottom: none; /* Remove a borda inferior do último item */
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px); /* Ajusta a posição do "X" */
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0; /* Esconde a segunda barra ao clicar */
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Ajusta a posição do "X" */
+}
+
+
+.outras-categorias {
+    margin-left: 50px;
+    font-weight: bold;
+}
+
+
+.arrow-right{
+  border: solid #013E22;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+    margin-left: 5px; /* Adiciona um espaçamento entre o texto e a seta */
+}
