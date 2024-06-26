@@ -1,51 +1,60 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const app = express();
-const port = 3000;
 const bodyParser = require('body-parser'); // Adicione o body-parser
 const path = require('path');
 const moment = require('moment');
+const Produto = require('./public/models/Produto'); // Importando o modelo de Produto
 
+const app = express();
+const port = 3000;
 
 // Middleware para analisar application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); // Adicione este middleware para analisar application/json
 // Middleware para servir arquivos estáticos
-app.use(express.static('public'));
+app.use(express.static('public', { 'extensions': ['html', 'htm', 'js'] }));
 
 // Rota para servir o arquivo index.html
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
-});
-app.get('/register-login', (req, res) => {
-    res.sendFile(__dirname + '/public/register-login.html');
-});
-app.get('/carrinho', (req, res) => {
-    res.sendFile(__dirname + '/public/carrinho.html');
-});
-app.get('/category', (req, res) => {
-    res.sendFile(__dirname + '/public/category.html');
-});
-app.get('/product', (req, res) => {
-    res.sendFile(__dirname + '/public/product.html');
-});
-app.get('/user', (req, res) => {
-    res.sendFile(__dirname + '/public/user.html');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// Rota para servir o arquivo register-login.html
+app.get('/register-login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'register-login.html'));
+});
+
+// Rota para servir o arquivo carrinho.html
+app.get('/carrinho', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'carrinho.html'));
+});
+
+// Rota para servir o arquivo category.html
+app.get('/category', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'category.html'));
+});
+
+// Rota para servir o arquivo product.html
+app.get('/product', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'product.html'));
+});
+
+// Rota para servir o arquivo user.html
+app.get('/user', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'user.html'));
+});
 
 // Conectando ao MongoDB
-const connect = mongoose.connect('mongodb://localhost:27017/login');
+const connect = mongoose.connect('mongodb://localhost:27017/pharmacy');
 
-//Checar se o banco está conectado ou não
+// Checar se o banco está conectado ou não
 connect.then(() => {
     console.log('Banco conectado com sucesso');
-})
-    .catch(() => {
-        console.log('Banco não está conectado');
-    });
+}).catch(() => {
+    console.log('Banco não está conectado');
+});
 
-//Criar um schema
+// Criar um schema
 const LoginSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -104,9 +113,8 @@ const LoginSchema = new mongoose.Schema({
     }
 });
 
-const collection = new mongoose.model('users', LoginSchema);
-
-module.exports = collection;
+const User = mongoose.model('users', LoginSchema);
+module.exports = { User };
 
 // Register User
 app.post('/register', async (req, res) => {
@@ -129,8 +137,8 @@ app.post('/register', async (req, res) => {
     };
 
     // Checar se o usuário já existe pelo CPF
-    const existeusuario = await collection.findOne({ cpf: data.cpf });
-    const existeemail = await collection.findOne({ email: data.email });
+    const existeusuario = await User.findOne({ cpf: data.cpf });
+    const existeemail = await User.findOne({ email: data.email });
 
     if (existeusuario || existeemail) {
         res.send('Usuário já existe. Por favor tente novamente.');
@@ -142,7 +150,7 @@ app.post('/register', async (req, res) => {
         data.password = hashedPassword;
 
         try {
-            const newUser = new collection(data);
+            const newUser = new User(data);
             await newUser.save();
             res.send('Usuário registrado com sucesso!');
         } catch (error) {
@@ -155,7 +163,7 @@ app.post('/register', async (req, res) => {
 // Login User
 app.post('/login', async (req, res) => {
     try {
-        const check = await collection.findOne({ cpf: req.body.cpf ? req.body.cpf.replace(/\D/g, '') : '' });
+        const check = await User.findOne({ cpf: req.body.cpf ? req.body.cpf.replace(/\D/g, '') : '' });
         if (!check) {
             return res.send('Usuário não encontrado');
         }
@@ -171,6 +179,59 @@ app.post('/login', async (req, res) => {
     } catch (error) {
         console.error('Erro ao tentar fazer login:', error);
         res.send('Detalhes Errados: ' + error.message); // Envie a resposta de detalhes errados com mensagem de erro
+    }
+});
+
+
+
+// Adicionar Produto
+app.post('/produtos', async (req, res) => {
+    const data = {
+        imagem: req.body.imagem,
+        descricao: req.body.descricao,
+        marca: req.body.marca,
+        preco: req.body.preco,
+        categoria: req.body.categoria,
+        subcategorias: req.body.subcategorias
+    };
+
+    try {
+        const novoProduto = new Produto(data);
+        await novoProduto.save();
+        res.status(201).send({ message: 'Produto adicionado com sucesso!' });
+    } catch (error) {
+        console.error('Erro ao adicionar produto:', error);
+        res.status(500).send({ message: 'Erro ao adicionar produto: ' + error.message });
+    }
+});
+
+// Buscar Produtos
+app.get('/produtos', async (req, res) => {
+    try {
+        const produtos = await Produto.find();
+        res.json(produtos);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
+
+// Rota para buscar produtos com filtro opcional por categoria
+app.get('/produtos', async (req, res) => {
+    const categoria = req.query.categoria; // Obtém o parâmetro de categoria da query string
+
+    try {
+        let produtos;
+
+        if (categoria) {
+            produtos = await Produto.find({ categoria: categoria });
+        } else {
+            produtos = await Produto.find();
+        }
+
+        res.json(produtos);
+    } catch (error) {
+        console.error("Erro ao buscar produtos:", error);
+        res.status(500).json({ message: 'Erro ao buscar produtos: ' + error.message });
     }
 });
 

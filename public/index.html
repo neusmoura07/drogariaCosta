@@ -31,11 +31,11 @@
 
     <header>
         <div class="logo">
-            <img src="../assets/images/logo.png" alt="Logo">
+            <img src="../assets/images/logo.png" alt="Logo" onclick="window.location.href='http://localhost:3000/'">
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="O que deseja encontrar?" class="search-input">
-            <button type="submit" class="search-button"></button>
+            <input type="text" id="searchInput" placeholder="O que deseja encontrar?" class="search-input">
+            <button type="submit" id="searchButton" class="search-button"></button>
         </div>
         <div class="cart-container">
             <span class="item-count">0</span>
@@ -56,17 +56,12 @@
         <div class="outras-categorias"><span>Outras Categorias</span></div>
         <div class="menu" id="menu">
             <ul>
-                <li>Medicamentos<span class="arrow-right"></span</li>
-                <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                <li>Medicamentos<span class="arrow-right"></span</li>
-                <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                <li>Medicamentos<span class="arrow-right"></span</li>
-                <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
+                <li><a href="/category?categoria=medicamentos">Medicamentos</a></li>
+                <li><a href="/category?categoria=higiene">Produtos de Higiene</a></li>
+                <li><a href="/category?categoria=cuidados-pele">Cuidados com a Pele</a></li>
+                <!-- Adicione outras categorias conforme necessário -->
             </ul>
-        </div>
+        </div>>
     </div>
 
     <div class="container my-5 p-3 categoria-container">
@@ -196,7 +191,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous"></script>
-    <script src="../js/script.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./arrayobjetosteste.js"></script>
+    <script src="./addproduto.js"></script>
+    <script src="./teste.js"></script>
 </body>
 
 </html>

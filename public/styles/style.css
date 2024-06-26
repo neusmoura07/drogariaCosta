@@ -89,11 +89,9 @@ h1 {
     /* Margem superior */
     margin-bottom: 10px;
     /* Margem inferior */
-    width: calc(100% + 35px);
+    width: calc(100% + 25px);
     /* Largura total mais a margem para cobrir toda a largura do card */
     position: relative;
-    left: -18px;
-    /* Move a linha para a esquerda para cobrir a margem */
 }
 
 /* Estilizando o botão */
@@ -128,7 +126,7 @@ div.card-footer {
 }
 
 .card-footer .fw-bold {
-    margin-right: auto !important;
+    margin-right: 15px !important;
     /* Adiciona margem automática à direita */
     margin-left: auto !important;
     /* Adiciona margem automática à esquerda */
