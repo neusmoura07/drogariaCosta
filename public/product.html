@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="./styles/categorias-p.css">
     <link rel="stylesheet" href="./styles/rodape.css">
     <link rel="stylesheet" href="./styles/product/product.css">
+    <script src="./js/product.js"></script>
+
 
 </head>
 
@@ -33,19 +35,19 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <img src="../assets/images/logo.png" alt="Logo">
+            <img src="../assets/images/logo.png" alt="Logo" onclick="window.location.href='http://localhost:3000/'">
         </div>
         <div class="search-bar">
-            <input type="text" placeholder="O que deseja encontrar?" class="search-input">
-            <button type="submit" class="search-button"></button>
+            <input type="text" id="searchInput" placeholder="O que deseja encontrar?" class="search-input">
+            <button type="submit" id="searchButton" class="search-button"></button>
         </div>
         <div class="cart-container">
             <span class="item-count">0</span>
-            <span class="cart-text">Meu Carrinho</span>
+            <a href="carrinho.html" class="login-link">Meu Carrinho</a>
         </div>
         <div class="account-container">
             <span class="account-text">Minha Conta</span>
-            <a href="caminho_para_pagina_de_login.html" class="login-link">Entrar</a>
+            <a href="register-login.html" class="login-link">Entrar</a>
         </div>
     </header>
 
@@ -58,86 +60,75 @@
         <div class="outras-categorias"><span>Outras Categorias</span></div>
         <div class="menu" id="menu">
             <ul>
-                <li>Medicamentos<span class="arrow-right"></span</li>
-                <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                <li>Medicamentos<span class="arrow-right"></span</li>
-                <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
-                <li>Medicamentos<span class="arrow-right"></span</li>
-                <li>Produtos de Higiene<span class="arrow-right"></span</li>
-                <li>Cuidados com a Pele<span class="arrow-right"></span</li>
+                <li><a href="/category?categoria=medicamentos">Medicamentos</a></li>
+                <li><a href="/category?categoria=higiene">Produtos de Higiene</a></li>
+                <li><a href="/category?categoria=cuidados-pele">Cuidados com a Pele</a></li>
             </ul>
         </div>
     </div>
 
-    <!-- Conteúdo da página -->
-<main class="container mt-4 mb-footer">
-    <div class="row">
-        <!-- Imagem do produto -->
-        <div class="col-md-6">
-            <div class="produto">
-                <div class="produto-imagem">
-                    <img src="../assets/images/dorflex.jpg" alt="Nome do Produto" class="img-fluid">
+    <main class="container mt-4 mb-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="produto">
+                    <div class="produto-imagem">
+                        <img src="" alt="Nome do Produto" class="img-fluid" id="imagemProduto">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h2 class="mt-4" id="tituloProduto"></h2>
+                <p class="marca-produto"><strong id="marcaProduto"></strong></p>
+                <div class="info-produto p-3 mb-3">
+                    <div class="preco fw-bold" id="precoProduto"></div>
+                    <div class="quantidade">
+                        <input type="number" class="form-control form-control-sm text-center input-quantidade"
+                            style="width: 50px;" value="1">
+                    </div>
+                    <button class="btn btn-primary btn-comprar mt-3" onclick="adicionarAoCarrinho()">Comprar</button>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <h4 class="descricao"><strong>Descrição</strong></h4>
+                <div class="descricao-produto pb-4 px-4">
+                    <p id="descricaoProduto">
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- Detalhes do produto -->
-        <div class="col-md-6">
-            <h2 class="mt-4">Dorflex analgésico e relaxante muscular
-                36 comprimidos.</h2>
-            <p class="marca-produto"><strong>DorFlex</strong></p>
-            <div class="info-produto p-3 mb-3">
-                <div class="preco fw-bold">R$ 99,99</div>
-                <div class="quantidade">
-                    <input type="number" class="form-control form-control-sm text-center input-quantidade" style="width: 50px;" value="1">
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    CALHEIROS FARMA LTDA | 44170902000141
                 </div>
-                <button class="btn btn-primary btn-comprar mt-3">Comprar</button>
+                <div class="footer-contact">
+                    Av. de Contôrno, 11 - Benedito Bentes - Maceió CEP: 57084646 | Fale conosco:
+                </div>
+                <div class="footer-social">
+                    <a href="https://wa.me/seunumero" target="_blank" class="footer-btn whatsapp">
+                        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://www.instagram.com/seuusuario" target="_blank" class="footer-btn instagram">
+                        <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
+                    </a>
+                </div>
+                <div class="footer-disclaimer">
+                    As informações contidas neste site não devem ser usadas para automedicação e não substituem, em
+                    hipótese alguma, as orientações dadas pelo profissional da área médica. Somente o médico está
+                    apto a diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. Ao
+                    persistirem os sintomas, um médico deverá ser consultado. Os preços e promoções divulgados no
+                    site são válidos apenas para compras feitas pela internet. Maiores esclarecimentos, consultar o
+                    site: www.anvisa.gov.br. Todos os pedidos efetuados estão sujeitos à confirmação da
+                    disponibilidade de produto em nosso estoque.
+                </div>
             </div>
         </div>
-        <!-- Descrição do Produto -->
-        <div class="col-md-12">
-            <h4 class="descricao"><strong>Descrição</strong></h4>
-            <div class="descricao-produto pb-4 px-4">
-                <p>
-                    Descrição mais detalhada do produto. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ornare finibus magna at viverra. Suspendisse non erat vitae ex fermentum vehicula. Nullam hendrerit dui sed dolor tristique mollis.
-                </p>
-            </div>
-        </div>
-    </div>
-</main>
+    </footer>
 
-<footer class="footer">
-    <div class="footer-container">
-        <div class="footer-content">
-            <div class="footer-info">
-                CALHEIROS FARMA LTDA | 44170902000141
-            </div>
-            <div class="footer-contact">
-                Av. de Contôrno, 11 - Benedito Bentes - Maceió CEP: 57084646 | Fale conosco:
-            </div>
-            <div class="footer-social">
-                <a href="https://wa.me/seunumero" target="_blank" class="footer-btn whatsapp">
-                    <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
-                </a>
-                <a href="https://www.instagram.com/seuusuario" target="_blank" class="footer-btn instagram">
-                    <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
-                </a>
-            </div>
-            <div class="footer-disclaimer">
-                As informações contidas neste site não devem ser usadas para automedicação e não substituem, em
-                hipótese alguma, as orientações dadas pelo profissional da área médica. Somente o médico está
-                apto a diagnosticar qualquer problema de saúde e prescrever o tratamento adequado. Ao
-                persistirem os sintomas, um médico deverá ser consultado. Os preços e promoções divulgados no
-                site são válidos apenas para compras feitas pela internet. Maiores esclarecimentos, consultar o
-                site: www.anvisa.gov.br. Todos os pedidos efetuados estão sujeitos à confirmação da
-                disponibilidade de produto em nosso estoque.
-            </div>
-        </div>
-    </div>
-</footer>
 
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -146,7 +137,11 @@
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous"></script>
     <script src="../js/script.js"></script>
-    <script src="../js/products.js"></script>
+    <script src="./filtro.js"></script>
+    <script src="./product.js"></script>
+    <script src="./adicionaraoCarrinho.js"></script>
+    <script src="./carrinho.js"></script>
+
 </body>
 
 </html>

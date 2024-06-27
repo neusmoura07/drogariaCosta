@@ -40,7 +40,7 @@
         </div>
         <div class="cart-container">
             <span class="item-count">0</span>
-            <span class="cart-text">Meu Carrinho</span>
+            <a href="carrinho.html" class="login-link">Meu Carrinho</a>
         </div>
         <div class="account-container">
             <span class="account-text">Minha Conta</span>
@@ -72,15 +72,16 @@
 
         <form id="addProdutoForm">
             <input type="text" name="imagem" placeholder="Imagem URL" required>
-            <input type="text" name="descricao" placeholder="Descrição" required>
+            <input type="text" name="descricao" placeholder="Titulo" required>
+            <input type="text" name="sobre" placeholder="Sobre" required>
             <input type="text" name="marca" placeholder="Marca" required>
             <input type="number" name="preco" placeholder="Preço" required>
             
             <select name="categoria" id="categoriaSelect" required>
                 <option value="" selected>Selecione uma categoria</option>
-                <option value="medicamentos"  selected>Medicamentos</option>
-                <option value="higiene"  selected>Produtos de Higiene</option>
-                <option value="cuidados-pele"  selected>Cuidado com a Pele</option>
+                <option value="medicamentos">Medicamentos</option>
+                <option value="higiene">Produtos de Higiene</option>
+                <option value="cuidados-pele">Cuidado com a Pele</option>
             </select>
             
             <input type="text" name="subcategorias" placeholder="Subcategorias (separadas por vírgula)" required>
@@ -168,9 +169,10 @@
         integrity="sha512-YpZUw4B6LwGdJZWZg9yPghzQ2MjB2yy2fA6Lk0wAlRzC+NoO9uHY9P6HuobEc11zFxb0U7UbUHP2Jc8aM/bz8g=="
         crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
-    <script src="./filtros.js"></script>
+    <script src="./filtro.js"></script>
     <script src="./addproduto.js"></script>
     <script src="./categorias.js"></script>
+    <script src="./adicionaraoCarrinho.js"></script>
 
     <!-- Fim das importações de JavaScript -->
 </body>

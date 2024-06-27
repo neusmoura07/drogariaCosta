@@ -6,8 +6,9 @@ body{
     border: 1px solid #EFEFEF;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-top: 10px;
     padding: 10px;
-    height: 100px; /* Tamanho fixo do container */
+    height: auto; /* Tamanho fixo do container */
     display: flex;
     align-items: center;
 }
@@ -16,6 +17,10 @@ body{
     max-height: 80px; /* Ajusta a imagem ao container */
     max-width: 100%;
     object-fit: contain;
+}
+
+.produto-item{
+    margin-bottom: 20px;
 }
 
 .lixeira-icon {

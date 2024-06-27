@@ -160,6 +160,7 @@ div.card-footer {
 /* Certifique-se de que o container do carrossel tem largura total */
 .owl-carousel {
     width: 100%;
+    display: flex;
 }
 
 /* Mantendo a largura fixa dos cards */

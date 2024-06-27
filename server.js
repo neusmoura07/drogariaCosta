@@ -189,10 +189,11 @@ app.post('/produtos', async (req, res) => {
     const data = {
         imagem: req.body.imagem,
         descricao: req.body.descricao,
+        sobre: req.body.sobre,
         marca: req.body.marca,
         preco: req.body.preco,
         categoria: req.body.categoria,
-        subcategorias: req.body.subcategorias
+        subcategorias: req.body.subcategorias.split(',').map(subcat => subcat.trim()), // Tratamento das subcategorias
     };
 
     try {
@@ -231,6 +232,7 @@ app.get('/produtos', async (req, res) => {
         res.status(500).json({ message: err.message });
     }
 });
+
 
 
 // Iniciar o servidor

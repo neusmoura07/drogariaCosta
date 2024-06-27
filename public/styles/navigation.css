@@ -4,7 +4,7 @@
 }
 
 .product-container {
-    display: flex;
+    display: flex !important;
     overflow-x: auto; /* Adiciona uma barra de rolagem horizontal */
     scroll-snap-type: x mandatory; /* Torna a rolagem mais suave */
     -webkit-overflow-scrolling: touch; /* Adiciona rolagem suave em dispositivos iOS */
@@ -84,3 +84,4 @@
         margin-right: 10px; /* Altera o espaçamento à direita */
     }
 }
+

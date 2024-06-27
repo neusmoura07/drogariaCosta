@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const produtosContainer = document.querySelector(".produtos");
     const subcategoriasContainer = document.querySelector(".subcategorias");
 
@@ -87,8 +87,16 @@ document.addEventListener("DOMContentLoaded", function() {
             cardDiv.appendChild(cardBodyDiv);
             produtoDiv.appendChild(cardDiv);
 
+            // Adiciona um evento de clique ao card para redirecionar para a página do produto
+            cardDiv.addEventListener("click", () => {
+                const queryString = `?imagem=${encodeURIComponent(produto.imagem)}&titulo=${encodeURIComponent(produto.descricao)}&sobre=${encodeURIComponent(produto.sobre)}&marca=${encodeURIComponent(produto.marca)}&preco=${encodeURIComponent(produto.preco.toFixed(2))}`;
+                window.location.href = `product.html${queryString}`;
+            });
+
             produtosContainer.appendChild(produtoDiv);
         });
+
+
     }
 
     // Função para buscar produtos do backend
@@ -163,13 +171,21 @@ document.addEventListener("DOMContentLoaded", function() {
             .filter(input => input.checked)
             .map(input => input.value);
 
-        const produtosFiltrados = produtos.filter(produto =>
-            subcategoriasSelecionadas.every(subcat => produto.subcategorias.includes(subcat))
-        );
+        // Se não houver subcategorias selecionadas, filtrar apenas pela categoria principal
+        if (subcategoriasSelecionadas.length === 0) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const categoria = urlParams.get('categoria');
+            const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
+            renderProdutos(produtosFiltrados);
+        } else {
+            // Filtrar pelos produtos que pertencem a todas as subcategorias selecionadas
+            const produtosFiltrados = produtos.filter(produto =>
+                subcategoriasSelecionadas.every(subcat => produto.subcategorias.includes(subcat))
+            );
 
-        renderProdutos(produtosFiltrados);
+            renderProdutos(produtosFiltrados);
+        }
     }
-
     // Função para filtrar produtos pela barra de pesquisa
     const searchInput = document.getElementById("searchInput");
     const searchButton = document.getElementById("searchButton");
@@ -210,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Atualizar produtos ao clicar em uma categoria
     const categoriaLinks = document.querySelectorAll('.categoria-link');
     categoriaLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
+        link.addEventListener('click', function (event) {
             event.preventDefault();
             const categoria = this.getAttribute('data-categoria');
             window.history.pushState(null, '', `/category?categoria=${categoria}`);
