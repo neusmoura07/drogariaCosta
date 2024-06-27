@@ -62,12 +62,12 @@
             <div class="outras-categorias"><span>Outras Categorias</span></div>
             <div class="menu" id="menu">
                 <ul>
-                    <li><a href="#" class="categoria-link" data-categoria="medicamentos">Medicamentos</a></li>
-                    <li><a href="#" class="categoria-link" data-categoria="higiene">Produtos de Higiene</a></li>
-                    <li><a href="#" class="categoria-link" data-categoria="cuidados-pele">Cuidados com a Pele</a></li>
+                    <li><a href="/category?categoria=medicamentos">Medicamentos</a></li>
+                    <li><a href="/category?categoria=higiene">Produtos de Higiene</a></li>
+                    <li><a href="/category?categoria=cuidados-pele">Cuidados com a Pele</a></li>
                 </ul>
             </div>
-            
+
         </div>
 
         <form id="addProdutoForm">
@@ -75,10 +75,19 @@
             <input type="text" name="descricao" placeholder="Descrição" required>
             <input type="text" name="marca" placeholder="Marca" required>
             <input type="number" name="preco" placeholder="Preço" required>
-            <input type="text" name="categoria" placeholder="Categoria" required>
+            
+            <select name="categoria" id="categoriaSelect" required>
+                <option value="" selected>Selecione uma categoria</option>
+                <option value="medicamentos"  selected>Medicamentos</option>
+                <option value="higiene"  selected>Produtos de Higiene</option>
+                <option value="cuidados-pele"  selected>Cuidado com a Pele</option>
+            </select>
+            
             <input type="text" name="subcategorias" placeholder="Subcategorias (separadas por vírgula)" required>
+            
             <button type="submit">Adicionar Produto</button>
         </form>
+        
 
 
         <!-- Filtro -->
@@ -159,56 +168,9 @@
         integrity="sha512-YpZUw4B6LwGdJZWZg9yPghzQ2MjB2yy2fA6Lk0wAlRzC+NoO9uHY9P6HuobEc11zFxb0U7UbUHP2Jc8aM/bz8g=="
         crossorigin="anonymous"></script>
     <script src="./js/script.js"></script>
-    <script src="./arrayobjetosteste.js"></script>
+    <script src="./filtros.js"></script>
     <script src="./addproduto.js"></script>
     <script src="./categorias.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const produtosContainer = document.getElementById('produtos-container');
-        
-            const buscarProdutos = async (categoria) => {
-                try {
-                    const url = `/produtos${categoria ? `?categoria=${categoria}` : ''}`;
-                    const response = await fetch(url);
-                    const produtos = await response.json();
-                    renderProdutos(produtos);
-                } catch (error) {
-                    console.error('Erro ao buscar produtos:', error);
-                }
-            };
-        
-            const categoriaLinks = document.querySelectorAll('.categoria-link');
-            
-            categoriaLinks.forEach(link => {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const categoria = this.getAttribute('data-categoria');
-                    buscarProdutos(categoria);
-                });
-            });
-        
-            // Função para renderizar produtos na página
-            const renderProdutos = (produtos) => {
-                produtosContainer.innerHTML = ''; // Limpa o conteúdo anterior
-                produtos.forEach(produto => {
-                    const produtoElement = document.createElement('div');
-                    produtoElement.classList.add('produto');
-                    produtoElement.innerHTML = `
-                        <img src="${produto.imagem}" alt="${produto.descricao}">
-                        <h3>${produto.descricao}</h3>
-                        <p>Preço: R$ ${produto.preco.toFixed(2)}</p>
-                        <p>Categoria: ${produto.categoria}</p>
-                        <p>Marca: ${produto.marca}</p>
-                    `;
-                    produtosContainer.appendChild(produtoElement);
-                });
-            };
-        
-            // Carregar produtos inicialmente ao carregar a página
-            buscarProdutos(null); // null para buscar todos os produtos
-        });
-        </script>
-
 
     <!-- Fim das importações de JavaScript -->
 </body>

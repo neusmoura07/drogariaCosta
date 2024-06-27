@@ -1,16 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Função para buscar produtos do backend
-    async function fetchProdutos() {
-        try {
-            const response = await fetch('http://localhost:3000/produtos');
-            const produtos = await response.json();
-            renderProdutos(produtos);
-        } catch (error) {
-            console.error("Erro ao buscar produtos:", error);
-        }
-    }
-
     const produtosContainer = document.querySelector(".produtos");
+    const subcategoriasContainer = document.querySelector(".subcategorias");
+
+    const subcategoriasPorCategoria = {
+        medicamentos: [
+            { value: "diabetes", label: "Diabetes" },
+            { value: "digestao", label: "Digestão" },
+            { value: "visao", label: "Visão" },
+            { value: "primeiros_socorros", label: "Primeiros Socorros" }
+        ],
+        higiene: [
+            { value: "oral", label: "Higiene Oral" },
+            { value: "corporal", label: "Higiene Corporal" },
+            { value: "capilar", label: "Higiene Capilar" }
+        ],
+        "cuidados-pele": [
+            { value: "hidratacao", label: "Hidratação" },
+            { value: "antiacne", label: "Antiacne" },
+            { value: "protetor_solar", label: "Protetor Solar" }
+        ]
+    };
+
 
     // Função para renderizar produtos com os cards estilizados
     function renderProdutos(produtos) {
@@ -81,32 +91,84 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    // Renderiza todos os produtos ao carregar a página
-    fetchProdutos();
+    // Função para buscar produtos do backend
+    async function fetchProdutos() {
+        try {
+            const response = await fetch('http://localhost:3000/produtos');
+            const produtos = await response.json();
+            return produtos;
+        } catch (error) {
+            console.error("Erro ao buscar produtos:", error);
+            return [];
+        }
+    }
 
-    // Filtro de subcategorias
-    const filtroInputs = document.querySelectorAll(".subcategoria");
+    // Função para filtrar produtos pela categoria da URL
+    async function filtrarPorCategoria() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const categoria = urlParams.get('categoria');
 
-    filtroInputs.forEach(input => {
-        input.addEventListener("change", async () => {
-            try {
-                const response = await fetch('http://localhost:3000/produtos');
-                const produtos = await response.json();
+        if (categoria) {
+            const produtos = await fetchProdutos();
+            const produtosFiltrados = produtos.filter(produto => produto.categoria === categoria);
+            renderProdutos(produtosFiltrados);
+            atualizarSubcategorias(categoria);
+        } else {
+            const produtos = await fetchProdutos();
+            renderProdutos(produtos);
+        }
+    }
 
-                const subcategoriasSelecionadas = Array.from(filtroInputs)
-                    .filter(input => input.checked)
-                    .map(input => input.value);
+    // Função para atualizar as subcategorias com base na categoria
+    function atualizarSubcategorias(categoria) {
+        subcategoriasContainer.innerHTML = ""; // Limpa o container de subcategorias
 
-                const produtosFiltrados = produtos.filter(produto => 
-                    subcategoriasSelecionadas.every(subcat => produto.subcategorias.includes(subcat))
-                );
+        if (subcategoriasPorCategoria[categoria]) {
+            subcategoriasPorCategoria[categoria].forEach(subcategoria => {
+                const div = document.createElement("div");
+                div.classList.add("form-check");
 
-                renderProdutos(produtosFiltrados);
-            } catch (error) {
-                console.error("Erro ao filtrar produtos:", error);
-            }
-        });
-    });
+                const input = document.createElement("input");
+                input.classList.add("form-check-input", "subcategoria");
+                input.type = "checkbox";
+                input.value = subcategoria.value;
+                input.id = `subcategoria-${subcategoria.value}`;
+                div.appendChild(input);
+
+                const label = document.createElement("label");
+                label.classList.add("form-check-label");
+                label.setAttribute("for", `subcategoria-${subcategoria.value}`);
+                label.textContent = subcategoria.label;
+                div.appendChild(label);
+
+                subcategoriasContainer.appendChild(div);
+            });
+
+            // Reaplica os eventos de filtragem de subcategorias
+            const filtroInputs = document.querySelectorAll(".subcategoria");
+
+            filtroInputs.forEach(input => {
+                input.addEventListener("change", async () => {
+                    const produtos = await fetchProdutos();
+                    filtrarPorSubcategorias(produtos);
+                });
+            });
+        }
+    }
+
+    // Função para filtrar produtos por subcategorias
+    function filtrarPorSubcategorias(produtos) {
+        const filtroInputs = document.querySelectorAll(".subcategoria");
+        const subcategoriasSelecionadas = Array.from(filtroInputs)
+            .filter(input => input.checked)
+            .map(input => input.value);
+
+        const produtosFiltrados = produtos.filter(produto =>
+            subcategoriasSelecionadas.every(subcat => produto.subcategorias.includes(subcat))
+        );
+
+        renderProdutos(produtosFiltrados);
+    }
 
     // Função para filtrar produtos pela barra de pesquisa
     const searchInput = document.getElementById("searchInput");
@@ -117,13 +179,12 @@ document.addEventListener("DOMContentLoaded", function() {
             // Verifica se está na página "category"
             if (window.location.pathname.includes("/category")) {
                 const searchTerm = searchInput.value.toLowerCase();
-                const response = await fetch('http://localhost:3000/produtos');
-                const produtos = await response.json();
-    
+                const produtos = await fetchProdutos();
+
                 const produtosFiltrados = produtos.filter(produto =>
                     produto.descricao.toLowerCase().includes(searchTerm)
                 );
-    
+
                 renderProdutos(produtosFiltrados);
             } else {
                 // Redireciona para a página "category"
@@ -134,8 +195,6 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    
-
     searchButton.addEventListener("click", searchProducts);
 
     searchInput.addEventListener("keypress", async (event) => {
@@ -144,31 +203,18 @@ document.addEventListener("DOMContentLoaded", function() {
             searchProducts();
         }
     });
-});
 
-document.addEventListener("DOMContentLoaded", function() {
-    const produtosContainer = document.querySelector('.produtos'); // Altere para a classe correta onde você quer inserir os produtos
+    // Carregar produtos filtrados pela categoria da URL ao carregar a página
+    filtrarPorCategoria();
 
-    const buscarProdutos = async (categoria) => {
-        try {
-            const url = `/produtos${categoria ? `?categoria=${categoria}` : ''}`;
-            const response = await fetch(url);
-            const produtos = await response.json();
-            renderProdutos(produtos);
-        } catch (error) {
-            console.error('Erro ao buscar produtos:', error);
-        }
-    };
-
+    // Atualizar produtos ao clicar em uma categoria
     const categoriaLinks = document.querySelectorAll('.categoria-link');
-    
     categoriaLinks.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
             const categoria = this.getAttribute('data-categoria');
-            buscarProdutos(categoria);
+            window.history.pushState(null, '', `/category?categoria=${categoria}`);
+            filtrarPorCategoria();
         });
     });
-    // Carregar todos os produtos inicialmente ao carregar a página
-    buscarProdutos(null); // null para buscar todos os produtos
 });

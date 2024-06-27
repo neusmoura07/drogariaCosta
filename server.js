@@ -215,23 +215,20 @@ app.get('/produtos', async (req, res) => {
     }
 });
 
-// Rota para buscar produtos com filtro opcional por categoria
+// Rota para buscar produtos filtrados por categoria
 app.get('/produtos', async (req, res) => {
-    const categoria = req.query.categoria; // Obtém o parâmetro de categoria da query string
-
     try {
-        let produtos;
+        const { categoria } = req.query;
+        let query = {};
 
         if (categoria) {
-            produtos = await Produto.find({ categoria: categoria });
-        } else {
-            produtos = await Produto.find();
+            query.categoria = categoria;
         }
 
+        const produtos = await Produto.find(query);
         res.json(produtos);
-    } catch (error) {
-        console.error("Erro ao buscar produtos:", error);
-        res.status(500).json({ message: 'Erro ao buscar produtos: ' + error.message });
+    } catch (err) {
+        res.status(500).json({ message: err.message });
     }
 });
 

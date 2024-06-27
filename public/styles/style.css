@@ -167,5 +167,6 @@ div.card-footer {
     width: 14rem;
 }
 
-
-
+.titulo-link{
+    text-decoration: none;
+}
